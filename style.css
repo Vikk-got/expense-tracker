@@ -1,0 +1,261 @@
+ body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .balance {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .balance h3 {
+            margin: 0;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        
+        #balance {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+        
+        .income-expense {
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .income, .expense {
+            text-align: center;
+            width: 48%;
+        }
+        
+        .income h4 {
+            color: #27ae60;
+            margin: 0 0 10px 0;
+        }
+        
+        .expense h4 {
+            color: #e74c3c;
+            margin: 0 0 10px 0;
+        }
+        
+        #income, #expense {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: 600;
+            color: #34495e;
+        }
+        
+        input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .history {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .history h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        #transactions {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+        
+        .transaction {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background: #f8f9fa;
+            position: relative;
+            transition: transform 0.2s;
+        }
+        
+        .transaction:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .transaction.income {
+            border-left: 4px solid #27ae60;
+        }
+        
+        .transaction.expense {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .transaction-text {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        
+        .transaction-amount {
+            font-weight: 600;
+            margin: 0 15px;
+        }
+        
+        .income .transaction-amount {
+            color: #27ae60;
+        }
+        
+        .expense .transaction-amount {
+            color: #e74c3c;
+        }
+        
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .transaction:hover .delete-btn {
+            opacity: 1;
+        }
+        
+        .empty-state {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 30px 0;
+        }
+        
+        /* Scrollbar styling */
+        #transactions::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        #transactions::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        #transactions::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        
+        #transactions::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+
+/* Add this to your existing CSS */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: none;
+}
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+    display: none;
+}
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.modal-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.modal-btn.cancel {
+    background: #0099ff;  /* Light gray */
+    color: #ffffff;       /* Dark text */
+    border: none;
+}
